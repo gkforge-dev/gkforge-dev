@@ -4,10 +4,8 @@ scalable cloud systems and enterprise-grade marketplaces using AWS, Node.js, MyS
 Proven leader of cross-functional teams (50+ engineers), with measurable impact on uptime, 
 latency, and operational efficiency.`,
   details: [
-    "🚀 Currently leading AI-driven hyper-personalization engine development",
     "👥 Managing 50+ engineers across 3 product lines",
     "☁️ Expert in AWS Serverless architecture & cloud optimization",
-    "📈 Improved delivery efficiency by 35% through agile workflows",
     "🏆 Employee of the Year - iProgrammer Solutions Pvt. Ltd."
   ],
   skills: {
@@ -138,12 +136,17 @@ export const CONTACT = {
   location: "Pune, Maharashtra, India"
 };
 
-export const EDUCATION = {
+export const EDUCATION = [{
   degree: "Bachelor of Computer Applications (BCA)",
   institution: "MIT World Peace University, Pune, India",
   year: "Sept 2020",
   cgpa: "7.4 CGPA"
-};
+},{
+  degree: "Higher Secondary Certificate (HSC)",
+  institution: "CBSE Board, India",
+  year: "2017",
+  cgpa: "65%"
+}];
 
 export const CERTIFICATIONS = [
   {

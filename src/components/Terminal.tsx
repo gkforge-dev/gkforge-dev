@@ -236,14 +236,16 @@ export default function Terminal() {
     return (
       <div>
         <div className="section-header">━━━ ~/education ━━━</div>
-        <div className="education-card">
-          <div className="education-degree">{EDUCATION.degree}</div>
-          <div className="education-institution">{EDUCATION.institution}</div>
-          <div className="education-details">
-            <span>Graduated: {EDUCATION.year}</span>
-            <span className="education-cgpa">{EDUCATION.cgpa}</span>
+        {EDUCATION.map((edu, i) => (
+          <div key={i} className="education-card">
+            <div className="education-degree">{edu.degree}</div>
+            <div className="education-institution">{edu.institution}</div>
+            <div className="education-details">
+              <span>Graduated: {edu.year}</span>
+              <span className="education-cgpa">{edu.cgpa}</span>
+            </div>
           </div>
-        </div>
+        ))}
 
         <div className="section-header" style={{ marginTop: '20px' }}>━━━ Certifications ━━━</div>
         {CERTIFICATIONS.map((cert, i) => (
