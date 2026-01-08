@@ -650,7 +650,7 @@ export default function Terminal() {
         );
         break;
       case 'whoami':
-        addOutput(<span className="success-text">gopal - Lead Software Engineer @ iProgrammer Solutions</span>);
+        addOutput(<span className="success-text">gopal - Lead Software Engineer</span>);
         break;
       case 'refresh':
         addOutput(<span className="success-text">Refreshing page...</span>);
