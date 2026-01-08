@@ -13,7 +13,6 @@
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-gkforge.dev-00d9ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://gkforge.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-gopal--khichar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gopal-khichar)
-[![GitHub](https://img.shields.io/badge/GitHub-imgk--dev-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/imgk-dev)
 [![LeetCode](https://img.shields.io/badge/LeetCode-gkforge-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/gkforge)
 
 </div>
