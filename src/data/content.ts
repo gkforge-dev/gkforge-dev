@@ -1,11 +1,16 @@
 export const ABOUT = {
-  intro: `Lead Software Engineer with 5+ years of experience in designing and delivering 
-scalable cloud systems and enterprise-grade marketplaces using AWS, Node.js, MySQL and Python. 
-Proven leader of cross-functional teams (50+ engineers), with measurable impact on uptime, 
-latency, and operational efficiency.`,
+  intro: `Lead Software Engineer with 5+ years of experience architecting and delivering 
+production-grade distributed systems, enterprise marketplaces, and cloud-native applications. 
+Specialized in AWS serverless architecture, microservices design, and building scalable platforms 
+that handle 100K+ monthly requests with 99.9% uptime.`,
   details: [
-    "👥 Managing 50+ engineers across 3 product lines",
-    "☁️ Expert in AWS Serverless architecture & cloud optimization",
+    "🚀 Architecting multi-tenant SaaS platforms & enterprise CRM systems at scale",
+    "👥 Leading 50+ engineers across 3 product lines with agile workflows",
+    "☁️ Expert in AWS Serverless (Lambda, Aurora, API Gateway, S3, CodePipeline)",
+    "🔧 Building RESTful APIs, microservices, and event-driven architectures",
+    "🤖 Integrating GenAI components for NLP-based query understanding & recommendations",
+    "💳 Implementing payment gateways, settlement workflows & multi-party transactions",
+    "📊 Reducing latency by 30%, improving delivery efficiency by 35%",
     "🏆 Employee of the Year - iProgrammer Solutions Pvt. Ltd."
   ],
   skills: {
