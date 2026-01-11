@@ -19,6 +19,8 @@ export default function Terminal() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [currentDir, setCurrentDir] = useState<Directory>('~');
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [showShutdown, setShowShutdown] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
   const outputIdRef = useRef(0);
@@ -116,7 +118,6 @@ export default function Terminal() {
           <span className="ls-dir">education/</span>
           <span className="ls-dir">contact/</span>
           <span className="ls-file">about.txt</span>
-          <span className="ls-file">resume.pdf</span>
         </div>
         <div className="hint-text" style={{ marginTop: '12px' }}>
           Use &quot;cd &lt;directory&gt;&quot; to navigate, &quot;ls&quot; to list contents
@@ -532,7 +533,7 @@ export default function Terminal() {
     
     addOutput(
       <div className="progress-container">
-        <div className="progress-text">Downloading Gopal_Khichar_Latest_CV.pdf...</div>
+        <div className="progress-text">Downloading Gopal-Khichar-CV.pdf...</div>
       </div>
     );
 
@@ -551,8 +552,8 @@ export default function Terminal() {
           
           // Trigger actual download
           const link = document.createElement('a');
-          link.href = '/Gopal_Khichar_Latest_CV.pdf';
-          link.download = 'Gopal_Khichar_Latest_CV.pdf';
+          link.href = '/Gopal-Khichar-CV.pdf';
+          link.download = 'Gopal-Khichar-CV.pdf';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -658,6 +659,11 @@ export default function Terminal() {
           window.location.reload();
         }, 500);
         break;
+      case 'exit':
+      case 'quit':
+      case 'bye':
+        setShowExitModal(true);
+        break;
       case '':
         // Empty command, do nothing
         break;
@@ -727,6 +733,28 @@ export default function Terminal() {
     }
   };
 
+  const handleExitConfirm = () => {
+    setShowExitModal(false);
+    setShowShutdown(true);
+    // Auto-try to close after 1 second
+    setTimeout(() => {
+      window.close();
+      // If still here after trying to close, window.close() didn't work (browser security)
+    }, 1000);
+  };
+
+  const handleExitKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter') {
+      handleExitConfirm();
+    } else if (e.key === 'Escape') {
+      setShowExitModal(false);
+      // Return focus to terminal input
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
+    }
+  };
+
   return (
     <div className="crt-container" onClick={handleTerminalClick}>
       <div className="terminal">
@@ -786,6 +814,77 @@ export default function Terminal() {
           </div>
         </div>
       </div>
+
+      {/* Shutdown Screen */}
+      {showShutdown && (
+        <div className="shutdown-screen">
+          <div className="shutdown-content">
+            <div className="shutdown-icon">⏻</div>
+            <div className="shutdown-text">Goodbye!</div>
+            <div className="shutdown-subtext">Close this tab to exit</div>
+            <div className="shutdown-hint">
+              <span className="key-hint">⌘W</span> / <span className="key-hint">Ctrl+W</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Exit Modal */}
+      {showExitModal && (
+        <div 
+          className="exit-modal-overlay" 
+          onKeyDown={handleExitKeyDown}
+          tabIndex={0}
+          ref={(el) => el?.focus()}
+        >
+          <div className="exit-modal">
+            <div className="exit-modal-header">
+              <div className="terminal-buttons">
+                <button className="terminal-btn btn-close" onClick={() => setShowExitModal(false)} />
+                <button className="terminal-btn btn-minimize" />
+                <button className="terminal-btn btn-maximize" />
+              </div>
+              <span className="exit-modal-title">goodbye.sh</span>
+            </div>
+            
+            <div className="exit-modal-body">
+              <div className="exit-ascii">
+{`
+  ████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗███████╗
+  ╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝██╔════╝
+     ██║   ███████║███████║██╔██╗ ██║█████╔╝ ███████╗
+     ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ ╚════██║
+     ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗███████║
+     ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
+`}
+              </div>
+              
+              <div className="exit-message">
+                <p>Thanks for visiting my terminal portfolio! 🚀</p>
+                <p className="exit-sub">It was great having you here.</p>
+              </div>
+
+              <div className="exit-connect">
+                <p className="exit-connect-title">Let&apos;s Connect!</p>
+                <div className="exit-qr">
+                  {/* QR Code for LinkedIn - Using QR API */}
+                  <img 
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://linkedin.com/in/gopal-khichar&bgcolor=0a0a0a&color=00d9ff"
+                    alt="LinkedIn QR Code"
+                    className="qr-image"
+                  />
+                </div>
+                <p className="exit-qr-label">Scan to connect on LinkedIn</p>
+              </div>
+
+              <button className="exit-btn" onClick={handleExitConfirm}>
+                [ OK ] Press Enter
+              </button>
+              <p className="exit-hint">Press Esc to cancel</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

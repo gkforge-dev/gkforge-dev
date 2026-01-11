@@ -400,9 +400,9 @@ body {
 }
 
 .skill-tag.tools {
-  background: rgba(136, 136, 136, 0.1);
-  border-color: var(--text-secondary);
-  color: var(--text-secondary);
+  background: rgba(168, 85, 247, 0.1);
+  border-color: #a855f7;
+  color: #a855f7;
 }
 
 /* Experience Section */
@@ -677,6 +677,7 @@ body {
   margin: 16px 0;
   text-shadow: 0 0 8px var(--glow-color);
   overflow-x: auto;
+  text-align: center;
 }
 
 /* Tagline */
@@ -1072,6 +1073,213 @@ body {
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
+}
+
+/* Exit Modal */
+.exit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  outline: none;
+}
+
+.exit-modal {
+  background: var(--bg-primary);
+  border: 1px solid #333;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.exit-modal-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid #333;
+  gap: 12px;
+}
+
+.exit-modal-title {
+  flex: 1;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.exit-modal-body {
+  padding: 24px;
+  text-align: center;
+}
+
+.exit-ascii {
+  color: var(--accent-cyan);
+  font-size: 8px;
+  line-height: 1.1;
+  white-space: pre;
+  text-shadow: 0 0 10px var(--glow-color);
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.exit-message {
+  margin-bottom: 24px;
+}
+
+.exit-message p {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.exit-sub {
+  color: var(--text-secondary) !important;
+  font-size: 1rem !important;
+}
+
+.exit-connect {
+  margin: 24px 0;
+}
+
+.exit-connect-title {
+  color: var(--accent-amber);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.3);
+}
+
+.exit-qr {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.qr-image {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--accent-cyan);
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+.exit-qr-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.exit-btn {
+  background: transparent;
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  padding: 12px 32px;
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.exit-btn:hover {
+  background: rgba(57, 255, 20, 0.1);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+}
+
+.exit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-green);
+}
+
+.exit-hint {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* Shutdown Screen */
+.shutdown-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.5s ease;
+}
+
+.shutdown-content {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.shutdown-icon {
+  font-size: 80px;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 30px var(--glow-color);
+}
+
+.shutdown-text {
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.shutdown-subtext {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.shutdown-hint {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.key-hint {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: inherit;
+  margin: 0 4px;
+}
+
+.shutdown-hint-secondary {
+  color: #555;
+  font-size: 12px;
+  margin-top: 16px;
 }
 
 /* Responsive */

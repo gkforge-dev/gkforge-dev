@@ -67,37 +67,9 @@ gopal@portfolio ~ ❯ ls experience/
 📁 iProgrammer Solutions Pvt. Ltd.
 ├── 🟢 Lead Software Engineer      (Jan 2025 – Present)
 ├── 🔵 Senior Software Engineer    (Feb 2023 – Jan 2025)
-├── 🟡 Software Engineer           (Feb 2022 – Feb 2023)
+├── 🟡 Software Engineer           (Mar 2022 – Feb 2023)
 └── ⚪ Associate Software Engineer (Feb 2021 – Mar 2022)
 ```
-
----
-
-```bash
-gopal@portfolio ~ ❯ ls projects/
-```
-
-| Project | Role | Tech Stack |
-|---------|------|------------|
-| 🏗️ **UTEC by Ultratech** | Backend Dev & Solution Architect | `AWS Serverless` `Aurora` `Node.js` |
-| 📄 **e-Invoicing SaaS (UAE)** | Solution Architect | `PEPPOL` `Node.js` `Python` `AWS` |
-| 📞 **Contact Center Panel** | Full Stack & Solution Architect | `AWS Serverless` `React` `Node.js` |
-| 📱 **OneTech Lite** | Backend Dev & Sync Architect | `Flutter` `AWS` `Offline Sync` |
-| 📅 **Event Management System** | Full Stack | `React` `Node.js` `MongoDB` |
-
----
-
-```bash
-gopal@portfolio ~ ❯ cat stats.txt
-```
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=imgk-dev&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0a0a0a&title_color=00d9ff&icon_color=39ff14&text_color=e8e8e8)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=imgk-dev&layout=compact&theme=tokyonight&hide_border=true&bg_color=0a0a0a&title_color=00d9ff&text_color=e8e8e8)
-
-</div>
 
 ---
 
@@ -110,7 +82,7 @@ gopal@portfolio ~ ❯ contact --list
 📱 Phone     : +91 8928680608
 🌐 Website   : gkforge.dev
 💼 LinkedIn  : linkedin.com/in/gopal-khichar
-🐙 GitHub    : github.com/imgk-dev
+🐙 GitHub    : github.com/gkforge-dev
 📍 Location  : Pune, Maharashtra, India
 ```
 
